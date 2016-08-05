@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabs</title>
+    <style>
+        ul>li{display: inline-block;width: 100px;height:40px;line-height: 40px;text-align: center;border: 1px solid blue;}
+        ul>li.active{background-color: lightblue;}
+        div.tabs-body{
+            width: 400px;height: 200px;border: 1px solid blue;text-align: center;font-size: 40px;line-height: 200px;}
+        div.tabs-body > div{display: none;}
+    </style>
+    <script src="../lib/jquery-1.11.3.min.js"></script>
+    <script src="../src/jquery.tabs.js"></script>
+</head>
+<body>
+    <div class="tabs">
+        <ul class="tabs-heading">
+            <li><a>1</a></li>
+            <li><a>2</a></li>
+            <li><a>3</a></li>
+            <li><a>4</a></li>
+            <li><a>5</a></li>
+            <li><a>6</a></li>
+        </ul>
+        <ul class="">
+            <li class="prev">prev</li>
+            <li class="next">next</li>
+        </ul>
+        <div class="tabs-body">
+            <div>this is 1</div>
+            <div>this is 2</div>
+            <div>this is 3</div>
+            <div>this is 4</div>
+            <div>this is 5</div>
+            <div>this is 6</div>
+        </div>
+    </div>
+
+    <div class="stabs">
+        <ul class="tabs-heading">
+            <li><a href="#tab-1">1</a></li>
+            <li><a href="#tab-2">2</a></li>
+            <li><a href="#tab-3">3</a></li>
+        </ul>
+        <div class="tabs-body">
+            <div id="tab-1">this is 1</div>
+            <div id="tab-2">this is 2</div>
+            <div id="tab-3">this is 3</div>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            $('.tabs').tabs({
+                active: 0,
+                animation: false,
+                mouseEvent: 'hover',
+                autoplay: true,
+                autoplayDelay: 1000,
+                control: true,
+            });
+        });
+    </script>
+</body>
+</html>
